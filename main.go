@@ -9,7 +9,10 @@ func main() {
 	var n, count int
 	fmt.Println("введите число")
 	fmt.Fscan(os.Stdin, &n)
-
+	if n >= 12307 {
+		fmt.Printf(" %d оч большое \n", n)
+		return
+	}
 	for n < 12307 {
 		if n < 0 {
 			n = n * (-1)
@@ -26,6 +29,13 @@ func main() {
 		}
 		if count == 0 {
 			n = (n + 2) * 3
+		}
+
+		if n%13 == 0 && n%9 == 0 {
+			fmt.Println("service error")
+			return
+		} else {
+			n++
 		}
 	}
 	fmt.Println(n)
